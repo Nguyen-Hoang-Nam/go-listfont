@@ -1,6 +1,12 @@
 # Go-Listfont
 
-List font in system base on [go-findfont](https://github.com/flopp/go-findfont)
+Cross platform list font of system base on [go-findfont](https://github.com/flopp/go-findfont).
+
+## Supported platform
+
+- [x] Linux
+- [x] Darwin
+- [x] Window
 
 ## Installation
 
@@ -20,13 +26,15 @@ import (
 )
 
 func main() {
-	fonts := listfont.List()
+  fonts := listfont.List()
 
-	for _, font := range fonts {
-		fmt.Printf("%s: %s:style=%s\n", font.Uri, font.Family, font.SubFamily)
-	}
+  for _, font := range fonts {
+    fmt.Printf("%s: %s:style=%s\n", font.Uri, font.Family, font.SubFamily)
+  }
 }
 ```
+
+### Linux
 
 ```
 $ go run main.go | grep -i noto
@@ -60,6 +68,34 @@ $ go run main.go | grep -i noto
 /usr/share/fonts/truetype/noto/NotoMono-Regular.ttf: Noto Mono:style=Regular
 /usr/share/fonts/truetype/noto/NotoSansMono-Bold.ttf: Noto Sans Mono:style=Bold
 /usr/share/fonts/truetype/noto/NotoSansMono-Regular.ttf: Noto Sans Mono:style=Regular
+```
+
+### Window
+
+```
+D:\Dev\listfont>go run main.go
+C:\Windows\Fonts\Candara.ttf: Candara:style=Regular
+C:\Windows\Fonts\Candarab.ttf: Candara:style=Bold
+C:\Windows\Fonts\Candarai.ttf: Candara:style=Italic
+C:\Windows\Fonts\Candaral.ttf: Candara:style=Light
+C:\Windows\Fonts\Candarali.ttf: Candara:style=Light Italic
+C:\Windows\Fonts\Candaraz.ttf: Candara:style=Bold Italic
+C:\Windows\Fonts\Gabriola.ttf: Gabriola:style=Regular
+C:\Windows\Fonts\Inkfree.ttf: Ink Free:style=Regular
+C:\Windows\Fonts\LeelUIsl.ttf: Leelawadee UI Semilight:style=Normal
+C:\Windows\Fonts\LeelaUIb.ttf: Leelawadee UI:style=Negreta
+C:\Windows\Fonts\LeelawUI.ttf: Leelawadee UI:style=Normal
+C:\Windows\Fonts\Nirmala.ttf: Nirmala UI:style=Regular
+C:\Windows\Fonts\NirmalaB.ttf: Nirmala UI:style=Bold
+C:\Windows\Fonts\NirmalaS.ttf: Nirmala UI Semilight:style=Regular
+C:\Windows\Fonts\SansSerifCollection.ttf: Sans Serif Collection:style=Regular
+C:\Windows\Fonts\SegUIVar.ttf: Segoe UI Variable:style=Regular
+C:\Windows\Fonts\SegoeIcons.ttf: Segoe Fluent Icons:style=Regular
+C:\Windows\Fonts\SitkaVF-Italic.ttf: Sitka Text:style=Italic
+C:\Windows\Fonts\SitkaVF.ttf: Sitka Text:style=Regular
+C:\Windows\Fonts\VNI 06 Springtime.ttf: VNI 06 Springtime:style=Bold
+C:\Windows\Fonts\VNI 08 Springtime2.ttf: VNI 08 Springtime2:style=BoldOblique
+C:\Windows\Fonts\VNI 09 Baroque.ttf: VNI 09 Baroque :style=Regular
 ```
 
 ## Contributing
